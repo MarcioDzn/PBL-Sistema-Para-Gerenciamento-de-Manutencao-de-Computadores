@@ -1,4 +1,4 @@
-package cliente;
+package dao.cliente;
 
 import model.Cliente;
 
