@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class OrdemServico {
+    private int id;
     private Cliente cliente;
     private Tecnico tecnico;
     private List<Servico> servicos;
@@ -18,6 +19,7 @@ public class OrdemServico {
     public OrdemServico(Cliente cliente) {
         this.cliente = cliente;
         this.tecnico = null;
+        this.id = 0;
 
         this.status = "Em Andamento";
 
@@ -98,6 +100,14 @@ public class OrdemServico {
         if (this.status.equals("Cancelado"))
             return true;
         return false;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
