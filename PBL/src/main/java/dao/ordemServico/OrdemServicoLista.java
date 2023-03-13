@@ -70,6 +70,14 @@ public class OrdemServicoLista implements OrdemServicoDAO{
 
     @Override
     public List<OrdemServico> buscarPorNomeCliente(String nome) {
-        return null;
+        List<OrdemServico> lista = new LinkedList<OrdemServico>();
+
+        for (Cliente listaCliente: DAO.getCliente().buscarPorNome(nome)){
+            for (OrdemServico ordem: listaCliente.getOrdensServico()){
+                lista.add(ordem);
+            }
+        }
+
+        return lista;
     }
 }
